@@ -1,0 +1,83 @@
+
+<html>
+  <head>
+    <style>
+      body {
+          display: flex;
+          justify-content: center;
+         
+      }
+      #game {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      #game {width: 70%;}
+      #setup, #quiz {
+          display: flex;
+          flex-direction: column;
+          align-items: left;
+      }
+      #title {font-size: 80px; margin: 30px;}
+      #lengthSelect {width:50;}
+      #start, #next {
+          width:100; height:50; 
+          margin: 30px;
+          font-size: 20px;
+      }
+      button {
+          background-color: white;
+          filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.25));
+      }
+      #start {background-color: lightgreen;}
+      .belowBox {display: flex; justify-content: center;}
+      #question {flex-wrap: wrap}
+      #answersBox{
+          background-color: blue;
+          display: flex;
+          flex-wrap: wrap;
+      }
+      #answersBox>button{
+          width: 40%; height: 70;
+          margin: 5%;
+          font-size: 16px;
+      }
+      #start {
+          font-size: 16px;
+          background-color:lightgreen;
+      }
+      #back {
+          position: absolute;
+          left: 10px;
+          padding: 10px;
+          background-color:lightgreen;
+      }
+    </style>
+  </head>
+  <body> 
+    <button id="back" onclick="location.href='/index.html'">Back</button>
+    <div id="game">
+      <h1 id="title">Trivia </h1>
+      <div id="setup">
+        <h3 id="score"></h3>
+        <p>Category: 
+          <select id="categorySelect"></select>
+        </p>
+        <p>Length of quiz:   
+          <input type="number" min="1" max="50" id="lengthSelect"/>
+        </p>
+        <div class="belowBox">
+          <button onclick="start()" id="start">Start</button>
+        </div>
+      </div>
+      <div id="quiz" style="display:none;">
+        <h3 id="description"></h3>
+        <h2 id="question"> </h2>
+        <div id="answersBox"></div>
+        <div class="belowBox">
+          <button onclick="next()" id="next">Next</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

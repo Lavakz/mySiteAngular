@@ -1,0 +1,206 @@
+
+<html>
+  <head>
+    <script>
+      let i = 0;
+      let correctCount = 0;
+      let firstGuess = true;
+      
+      window.onload = function(){
+          getCategories();
+      } 
+      
+      function start() {
+          i = 0;
+          correctCount = 0;
+          quiz = getQuiz(document.getElementById("lengthSelect").value, 
+                         document.getElementById("categorySelect").value);
+          loadQuestion(0);
+          document.getElementById("setup").style.display = "none";
+          document.getElementById("quiz").style.display = "block"
+      }
+      
+      function results() {
+          document.getElementById('score').innerHTML = 'Final score is '+correctCount+' out of '+quiz.length;
+          document.getElementById("quiz").style.display = "none";
+          document.getElementById("setup").style.display = "block";
+          const result = {
+              correct: correctCount,
+              quizLength: quiz.length,
+              category: quiz[0].category
+          }
+          var json = JSON.stringify(result);
+          //fs.appendFile('triviaResults.json', json, function(err){});
+      }
+      
+      function next() {
+          document.getElementById('next').style.background='white';
+          if (i < quiz.length-1){
+              i++;
+              loadQuestion(i);
+          } else results()
+      }
+      
+      function getCategories() {
+          var Httpreq = new XMLHttpRequest();
+          Httpreq.open("GET",'https://opentdb.com/api_category.php',false);
+          Httpreq.send(null);
+          let categories = JSON.parse(Httpreq.responseText).trivia_categories;
+      
+          var categorySelect = document.getElementById("categorySelect");
+          categories.forEach(function(category) {
+              var el = document.createElement("option");
+              el.textContent = category.name;
+              el.value = category.id;
+              categorySelect.appendChild(el);
+          })
+      }
+      
+      function getQuiz(length, category) {
+          var Httpreq = new XMLHttpRequest();
+          Httpreq.open("GET",'https://opentdb.com/api.php?amount='+length+
+                                                      '&category='+category,false);
+          Httpreq.send(null);
+          let json_obj = JSON.parse(Httpreq.responseText); 
+      
+          quiz = [];
+          for (let i = 0; i < length; i++){
+              quiz.push({
+                      question: json_obj.results[i].question,
+                      category: json_obj.results[i].category,
+                      incorrect: json_obj.results[i].incorrect_answers,
+                      correct: json_obj.results[i].correct_answer
+              });
+          }
+          return quiz;
+      }
+      
+      function loadQuestion() {
+          document.getElementById('description').innerHTML = correctCount + '/' + quiz.length + ' ' + quiz[i].category;
+          document.getElementById('question').innerHTML = 'Q'+(i+1) + ': ' + quiz[i].question;
+      
+          // remove old answers
+          var answersBox = document.getElementById("answersBox");
+          answersBox.innerHTML = ''
+      
+          // create answers array
+          let answers = [];
+          let count = 0;
+          answerAmount = quiz[i].incorrect.length+1;
+          correctPos = Math.floor(Math.random() * answerAmount)
+          for (let pos = 0; pos < answerAmount; pos++) 
+              if (pos == correctPos)
+                  answers[correctPos] = quiz[i].correct;
+              else answers[pos] = quiz[i].incorrect.pop();
+      
+          // Create answer buttons
+          for (let pos = 0; pos < answers.length; pos++){
+              var el = document.createElement("button");
+              el.class = "answer";
+              el.id = 'a' + pos;
+              el.textContent = answers[pos];
+              if (pos == correctPos)
+                  el.onclick = function(){correct(pos);};
+              else el.onclick = function(){incorrect(pos);};
+              
+              answersBox.appendChild(el);
+          }
+          firstGuess = true;
+      }
+      
+      function correct(pos) {
+          if (firstGuess){
+              document.getElementById('next').style.background='lightgreen'
+              correctCount++;
+          }
+          document.getElementById('a' + pos).style.background='lightgreen';
+          firstGuess = false;
+      }
+      
+      function incorrect(pos) {
+          if (firstGuess)
+              document.getElementById('next').style.background='red'
+          document.getElementById('a' + pos).style.background='red';
+          firstGuess = false;
+      }
+    </script>
+    <style>
+      body {
+          display: flex;
+          justify-content: center;
+         
+      }
+      #game {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      #game {width: 70%;}
+      #setup, #quiz {
+          display: flex;
+          flex-direction: column;
+          align-items: left;
+      }
+      #title {font-size: 80px; margin: 30px;}
+      #lengthSelect {width:50;}
+      #start, #next {
+          width:100; height:50; 
+          margin: 30px;
+          font-size: 20px;
+      }
+      button {
+          background-color: white;
+          filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.25));
+      }
+      #start {background-color: lightgreen;}
+      .belowBox {display: flex; justify-content: center;}
+      #question {flex-wrap: wrap}
+      #answersBox{
+          background-color: blue;
+          display: flex;
+          flex-wrap: wrap;
+      }
+      #answersBox>button{
+          width: 40%; height: 70;
+          margin: 5%;
+          font-size: 16px;
+      }
+      #start {
+          font-size: 16px;
+          background-color:lightgreen;
+      }
+      #back {
+          position: absolute;
+          left: 10px;
+          padding: 10px;
+          background-color:lightgreen;
+      }
+    </style>
+  </head>
+  <body> 
+    <button id="back" onclick="location.href='/index.html'">Back</button>
+    <div id="game">
+      <h1 id="title">Trivia </h1>
+      <div id="setup">
+        <h3 id="score"></h3>
+        <p>Category: 
+          <select id="categorySelect"></select>
+        </p>
+        <p>Length of quiz:   
+          <input type="number" min="1" max="50" id="lengthSelect"/>
+        </p>
+        <div class="belowBox">
+          <button onclick="start()" id="start">Start</button>
+        </div>
+      </div>
+      <div id="quiz" style="display:none;">
+        <h3 id="description"></h3>
+        <h2 id="question"> </h2>
+        <div id="answersBox"></div>
+        <div class="belowBox">
+          <button onclick="next()" id="next">Next</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
