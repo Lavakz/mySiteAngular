@@ -1,7 +1,7 @@
 <body>
   <!-- MENU -->
   <div id="codeMenu" *ngIf="codeMenuOpen">
-    <app-code-menu></app-code-menu>
+    <app-code-menu (projectSelected)="changeDisplayedProject($event)"></app-code-menu>
   </div>
 
   <!-- TOP -->
@@ -12,7 +12,7 @@
     <app-trivia></app-trivia>
   </div>
   <div *ngIf="displayedProject === 'Word Game'">
-    <!-- <app-word-game></app-word-game> -->
+    <app-word-game></app-word-game>
   </div>
 
   <!-- BOTTOM -->

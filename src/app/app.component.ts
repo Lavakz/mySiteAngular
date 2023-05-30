@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IndexComponent } from './index/index.component';
-import { TriviaComponent } from './trivia/trivia.component';
+import { HomeComponent } from './home/home.component';
+import { TriviaComponent } from './code/trivia/trivia.component';
 import { CodeComponent } from './code/code.component';
-import { CodeMenuComponent } from './code-menu/code-menu.component';
+import { CodeMenuComponent } from './code/code-menu/code-menu.component';
 import { CommonModule } from '@angular/common';
 import { NgIf } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
   selector: 'app-root',
   standalone: true,
   imports: [
-    IndexComponent,
+    HomeComponent,
     TriviaComponent,
     RouterModule,
     CodeComponent,

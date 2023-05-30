@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { TriviaComponent } from './trivia/trivia.component';
-import { IndexComponent } from './index/index.component';
+import { TriviaComponent } from './code/trivia/trivia.component';
+import { HomeComponent } from './home/home.component';
 import { CodeComponent } from './code/code.component';
 
 const routeConfig: Routes = [
@@ -10,8 +10,8 @@ const routeConfig: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'index',
-    component: IndexComponent,
+    path: 'home',
+    component: HomeComponent,
     title: 'Home page'
   },
   {

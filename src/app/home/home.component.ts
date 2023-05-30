@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { TriviaComponent } from '../trivia/trivia.component';
+import { TriviaComponent } from '../code/trivia/trivia.component';
 import { AppComponent } from '../app.component';
 
 @Component({
-  selector: 'app-index',
+  selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterLink, TriviaComponent],
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.sass']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.sass']
 })
-export class IndexComponent {
+export class HomeComponent {
   constructor(private _parent: AppComponent) { this._parent.backButtonVisible = false; }
 }
