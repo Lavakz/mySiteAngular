@@ -1,13 +1,24 @@
+@use '../../../styles'
+    
 #menu
-    margin: 50px
+    padding: 28px
+    background-color: styles.$blue
 
 #links
     display: flex
     flex-direction: column
 
 #links a 
-    margin: 3px
     font-size: 14px
     padding: 7px
-    background-color: #000000
+    
+    @include styles.button()
+
+h1 
     color: #ffffff
+    margin: 0px 0px 28px 0px
+
+
+
+
+

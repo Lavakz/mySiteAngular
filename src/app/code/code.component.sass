@@ -1,3 +1,5 @@
+@use '../../styles'
+
 body
     display: flex
     flex-direction: column
@@ -7,32 +9,20 @@ body
 h1 
     color: #000000
 
-#bottomBar button
-    background-color: #000000
-    color: #ffffff
-    border: none
-    padding: 15px 32px
-    text-align: center
-    display: inline-block
-    font-size: 16px
-    margin: 4px 2px
-    cursor: pointer
-
 #codeMenu 
     display: flex
     flex-direction: column
     position: absolute
     text-align: center
-    background-color: #006eff
     align-self: center
-    top: 100px
+    bottom: 100px
 
 #bottomBar
     display: flex
     flex-direction: row
     justify-content: space-between
     align-content: center
-    background-color: #006eff
+    background-color: styles.$blue
     align-self: center
     width: 100%
     position: fixed
@@ -40,8 +30,19 @@ h1
     left: 0
     right: 0
     height: 50px
+    padding: 5px 0px
+
+#bottomBar button
+    color: #ffffff
+    border: none
+    padding: 0px 20px
+    text-align: center
+    display: inline-block
+    font-size: 16px
+    margin: 4px 2px
+    cursor: pointer
+
+    @include styles.button()
 
 #top 
     align-self: center
-    
-

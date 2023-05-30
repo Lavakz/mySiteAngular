@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+$rust: rgb(131,8,8)
+$brown: rgb(69,58,60)
+$blue: rgb(57,100,141)
+$silver: rgb(182,182,182)
+
+@mixin button($color: $silver)
+    color: $blue
+    border-radius: 4px
+
+    background-color: rgba($color, 1)
+    &:hover
+        background-color: rgba($color, 0.7)
+        cursor: pointer
