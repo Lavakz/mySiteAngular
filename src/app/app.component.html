@@ -1,2 +1,4 @@
-<button>Back</button>
-<app-index></app-index>
+<div *ngIf="this.backButtonVisible" >
+    <button id="backButton" [routerLink]="['/index']">Back</button>
+</div>
+<router-outlet></router-outlet>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import './trivia.js';
 
 @Component({
   selector: 'app-trivia',
@@ -8,4 +9,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './trivia.component.html',
   styleUrls: ['./trivia.component.sass']
 })
-export class TriviaComponent {}
+
+export class TriviaComponent {
+  constructor() {
+    
+  }
+}
+

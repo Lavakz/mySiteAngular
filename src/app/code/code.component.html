@@ -1,0 +1,24 @@
+<body>
+  <!-- MENU -->
+  <div id="codeMenu" *ngIf="codeMenuOpen">
+    <app-code-menu></app-code-menu>
+  </div>
+
+  <!-- TOP -->
+  <div id="top">{{displayedProject}}</div>
+
+  <!-- PROJECTS -->
+  <div *ngIf="displayedProject === 'Trivia'">
+    <app-trivia></app-trivia>
+  </div>
+  <div *ngIf="displayedProject === 'Word Game'">
+    <!-- <app-word-game></app-word-game> -->
+  </div>
+
+  <!-- BOTTOM -->
+  <div id="bottomBar">
+    <button type="button" (click)="null"><==</button>
+    <button type="button" (click)="codeMenuOpen = !codeMenuOpen">Program</button>
+    <button type="button" (click)="null">==></button>
+  </div>
+</body>
