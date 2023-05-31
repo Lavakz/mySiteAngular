@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Space Race</title>
+    <script type="text/javascript" src="Spaceship.js"></script>
+    <script type="text/javascript" src="ring.js"></script>
+    <script type="text/javascript" src="finish-line.js"></script>
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="SpaceGame.js"></script>
+    <script type="text/javascript" src="shapes.js"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Space Race</h1>
+      <div id="second-container">
+        <div id="instructions">
+          <p>W: tilt up</p>
+          <p>A: roll left</p>
+          <p>S: tilt down</p>
+          <p>D: roll right</p>
+        </div>
+        <div id="canvas-timer">
+          <p id="timer" hidden="">00:00</p>
+          <canvas id="gl-canvas" width="650" height="650" #glcanvas></canvas>
+          <div id="layered-content">
+            <p id="who-won" hidden=""></p>
+            <p id="finish" hidden="">Finished</p>
+            <p id="user-time" hidden=""></p>
+            <div id="rules-container">
+              <p id="rules">
+                A rival pilot challenges you—an ambitious new pilot—to a
+                spaceship race around a nearby planet.<br /><br />
+                Go through all the rings and cross the finish line before the
+                rival ship!<br /><br />
+                (press space to start)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <img id="volcanoPlanetTex" hidden="" /><img
+        id="gasPlanetTex"
+        src="./SpaceRaceGameImages/Terrestrial2-1024.png"
+        hidden=""
+      /><img id="earthPlanetTex" src="./SpaceRaceGameImages/Gaseous2-1024.png" hidden="" /><img
+        id="shipTexture"
+        src="./SpaceRaceGameImages/metalWires512.jpg"
+        hidden=""
+      /><img id="finishLineTex" src="./SpaceRaceGameImages/finish-line.svg" hidden="" /> -->
+      <img id="volcanoPlanetTex" hidden="" /><img
+        id="gasPlanetTex"
+        hidden=""
+      /><img id="earthPlanetTex" hidden="" /><img
+        id="shipTexture" hidden=""
+      /><img id="finishLineTex" hidden="" />
+    </div>
+  </body>
+</html>

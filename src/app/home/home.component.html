@@ -28,11 +28,11 @@
     <!-- <script type="text/javascript" src="starUtils.js"></script> -->
     <script type="text/javascript" src="home.component.js"></script>
   </head>
-  <body onload="init();">
+  <body>
     <canvas id="gl-canvas">your browser doesn't support the HTML5 canvas element</canvas>
     <div class="overCanvas">
       <!-- <h1>Welcome!</h1> -->
-      <div class="index">
+      <div id="index">
         <div class="column">
           <h2>My Code:</h2>
           <button [routerLink]="['/code']">Code</button><br>
@@ -40,7 +40,7 @@
         <div class="column">
           <h2>My Music:</h2>
           <button onclick="location.href='https://www.youtube.com/channel/UCsBV3-0sI4AP4dj1-HwTsJQ'">Covers</button><br>
-          <button onclick="location.href='/music.html'">Music</button>
+          <button [routerLink]="['/music']">Music</button>
         </div>
       </div>
       <!--p(style={color : 'black'}) Text-->
