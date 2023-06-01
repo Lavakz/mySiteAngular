@@ -1,13 +1,15 @@
 @use '../../../styles'
     
 #menu
+    // position: absolute
+    margin: 0 0 0 0
     padding: 28px
-    background-color: styles.$blue
+    @include styles.window($color: styles.$blue)
 
 #links
     display: flex
     flex-direction: column
-
+    
 #links a 
     font-size: 14px
     padding: 7px

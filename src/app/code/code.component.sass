@@ -1,5 +1,8 @@
 @use '../../styles'
 
+h3
+    color: rgb(255, 255, 255)
+
 #container
     display: flex
     flex-direction: column
@@ -8,8 +11,10 @@
 
 #project
     display: flex
-    justify-content: center
-    align-content: center
+    justify-self: center
+    align-self: center
+
+    @include styles.window()
 
 #codeMenu 
     display: flex
@@ -17,7 +22,7 @@
     position: absolute
     text-align: center
     align-self: center
-    bottom: 100px
+    top: 25%
 
 #bottomBar
     display: flex
@@ -34,6 +39,8 @@
     height: 50px
     padding: 5px 0px
 
+    @include styles.window()
+    
 #bottomBar button
     color: #ffffff
     border: none

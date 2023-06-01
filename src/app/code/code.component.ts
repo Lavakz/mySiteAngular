@@ -20,13 +20,24 @@ import { SpaceRaceGameComponent } from './space-race-game/space-race-game.compon
   ],
 })
 export class CodeComponent {
-  codeMenuOpen = false;
-  displayedProject = 'Choose a Project';
+  projectIndex: number = 0;
+  projects: string[] = ['Trivia', 'Word Game', 'Space Race Game'];
+  displayedProject: string = 'Choose a Project';
+  codeMenuOpen: boolean = false;
   constructor(private _parent: AppComponent) {
     this._parent.backButtonVisible = true;
+    this.codeMenuOpen = true;
   }
   changeDisplayedProject(selection: string) {
+    this.projectIndex = this.projects.indexOf(selection);
     this.codeMenuOpen = false;
     this.displayedProject = selection;
+  }
+  incrementProject(previous: boolean) {
+    if (this.projectIndex <= 0) this.projectIndex = this.projects.length - 1;
+    else
+      this.projectIndex =
+        (this.projectIndex + (previous ? -1 : 1)) % this.projects.length;
+    this.changeDisplayedProject(this.projects[this.projectIndex]);
   }
 }

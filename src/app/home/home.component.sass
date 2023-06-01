@@ -10,8 +10,7 @@ body
     justify-content: center
     margin: 0 auto 
     font-family: 'Space Mono', monospace 
-    height: 100% 
-    width: 100% 
+
 canvas 
     height: 100% 
     width: 100% 
@@ -20,10 +19,8 @@ canvas
     position: absolute 
 #index 
     display: flex
-    background-color: rgba(styles.$blue, 0.7)
     padding: 50px  0 100px 0
-    border-radius: 16px
-    border: 2px solid rgba(styles.$blue, 1)
+    @include styles.window(styles.$blue)
 .column 
     width: 400px 
     flex: 50% 

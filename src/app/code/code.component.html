@@ -1,27 +1,28 @@
 <div id="container">
+  
+  <!-- TOP -->
+  <div id="top"><h3>{{displayedProject}}</h3></div>
+  
   <!-- MENU -->
   <div id="codeMenu" *ngIf="codeMenuOpen">
     <app-code-menu (projectSelected)="changeDisplayedProject($event)"></app-code-menu>
   </div>
 
-  <!-- TOP -->
-  <div id="top">{{displayedProject}}</div>
-
   <!-- PROJECTS -->
   <div id="project">
     <ng-container [ngSwitch]="displayedProject">
-      <h1 *ngSwitchCase="'Choose a Project'">Choose a Project</h1>
-      <p *ngSwitchCase="'Trivia'"><app-trivia></app-trivia></p>
-      <p *ngSwitchCase="'Word Game'"><app-word-game></app-word-game></p>
-      <p *ngSwitchCase="'Space Race Game'"><app-space-race-game></app-space-race-game></p>
-      <p *ngSwitchDefault></p>
+      <!-- <h1 *ngSwitchCase="'Choose a Project'">Choose a Project</h1> -->
+      <div *ngSwitchCase="projects[0]"><app-trivia></app-trivia></div>
+      <div *ngSwitchCase="projects[1]"><app-word-game></app-word-game></div>
+      <div *ngSwitchCase="projects[2]"><app-space-race-game></app-space-race-game></div>
+      <div *ngSwitchDefault></div>
     </ng-container>
   </div>
 
   <!-- BOTTOM -->
   <div id="bottomBar">
-    <button type="button" (click)="null"><==</button>
+    <button type="button" (click)="incrementProject(false)"><==</button>
     <button type="button" (click)="codeMenuOpen = !codeMenuOpen">Projects</button>
-    <button type="button" (click)="null">==></button>
+    <button type="button" (click)="incrementProject(true)">==></button>
   </div>
 </div>
