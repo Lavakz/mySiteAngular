@@ -34,7 +34,7 @@ export class CodeComponent {
     this.displayedProject = selection;
   }
   incrementProject(previous: boolean) {
-    if (this.projectIndex <= 0) this.projectIndex = this.projects.length - 1;
+    if (this.projectIndex <= 0 && previous) this.projectIndex = this.projects.length - 1;
     else
       this.projectIndex =
         (this.projectIndex + (previous ? -1 : 1)) % this.projects.length;

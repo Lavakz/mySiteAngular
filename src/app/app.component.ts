@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { TriviaComponent } from './code/trivia/trivia.component';
 import { CodeComponent } from './code/code.component';
 import { CodeMenuComponent } from './code/code-menu/code-menu.component';
+import { MusicComponent } from './music/music.component';
 import { CommonModule } from '@angular/common';
 import { NgIf } from '@angular/common';
 
@@ -12,10 +13,11 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [
     HomeComponent,
-    TriviaComponent,
-    RouterModule,
     CodeComponent,
     CodeMenuComponent,
+    MusicComponent,
+    TriviaComponent,
+    RouterModule,
     CommonModule,
     NgIf,
   ],
