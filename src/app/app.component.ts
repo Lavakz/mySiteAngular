@@ -21,7 +21,14 @@ import { NgIf } from '@angular/common';
     CommonModule,
     NgIf,
   ],
-  templateUrl: './app.component.html',
+  template: `
+    <div *ngIf="this.backButtonVisible">
+      <button id="backButton" [routerLink]="['/home']">Back</button>
+    </div>
+    <div id="routerContainer">
+      <router-outlet></router-outlet>
+    </div>
+  `,
   styleUrls: ['./app.component.sass'],
 })
 export class AppComponent {
