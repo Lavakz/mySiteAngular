@@ -17,18 +17,18 @@ import WaveSurfer from 'wavesurfer.js';
   styleUrls: ['./audio-player.component.sass'],
 })
 export class AudioPlayerComponent {
-  public static loadedWaves: Song[] = [];
+  public static loadedSongs: Song[] = [];
 
   constructor() {
     window.addEventListener('resize', () => {
-      AudioPlayerComponent.loadedWaves.forEach((wave) => {
+      AudioPlayerComponent.loadedSongs.forEach((wave) => {
         wave.destroy();
       });
-      AudioPlayerComponent.loadedWaves = [];
+      AudioPlayerComponent.loadedSongs = [];
       loadWave();
     });
   }
-  ngAfterViewInit() {
+  ngOnInit() {
     loadWave();
   }
 
@@ -37,7 +37,7 @@ export class AudioPlayerComponent {
 
 function loadWave() {
   const song = new Song();
-  AudioPlayerComponent.loadedWaves.push(song);
+  AudioPlayerComponent.loadedSongs.push(song);
   return song
 }
 
