@@ -73,7 +73,7 @@ export class AudioPlayerComponent {
   refreshSong() {
     this.songNames = getSongNames();
     AudioPlayerComponent.loadedSongs.forEach((wave) => wave.destroy());
-    loadSong();
+    loadSong(this.songIndex);
   }
 }
 
@@ -99,7 +99,7 @@ class Song {
   private createWaveSurfer(containerSeletor: string | null) {
     this.wavesurfer = WaveSurfer.create({
       container: containerSeletor,
-      waveColor: 'violet',
+      waveColor: 'black',
       progressColor: 'purple',
       height: 80,
       barWidth: 2,
