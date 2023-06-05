@@ -3,7 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/zachlava/public_html/
     - ng build
-    - /bin/cp -R dist/my-site/* $DEPLOYPATH
+    - /bin/cp -R dist/mySiteAngular/* $DEPLOYPATH
     - /bin/cp -R package-lock.json $DEPLOYPATH
     - /bin/cp -R package.json $DEPLOYPATH
     - /bin/cp -R angular.json $DEPLOYPATH 
