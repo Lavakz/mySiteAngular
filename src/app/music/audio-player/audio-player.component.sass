@@ -1,7 +1,7 @@
 @use '../../../styles'
 
 .navigation
-    margin: 5% 75% 5% 25%
+    margin: 2% 75% 2% 25%
     width: 50%
     height: 50%
 
@@ -29,10 +29,13 @@
 
     @include styles.button()
 
-#waveform
+#waveform1
     width: 100%
     height: 100%
     margin: 10px 0 10px 0
+
+#waveform2, #waveform3
+    display: none
 
 #songTitle
     font-size: 32px
@@ -40,5 +43,6 @@
 #songWindow
     display: flex
     justify-content: center
+    margin: 0 0 5% 0
 
     @include styles.window()

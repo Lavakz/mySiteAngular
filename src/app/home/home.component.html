@@ -1,52 +1,18 @@
-<head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="home.component.sass" />
-  <title></title>
-  <!-- Begin GLSL 3.0 Shader code-->
-  <script id="vertex-shader" type="x-shader/x-vertex">
-    #version 300 es
-    in vec2 a_coords;
-    uniform mat4 u_transform;
-    void main() {
-      vec4 transformedHCoord = u_transform * vec4(a_coords, 0.0, 1.0);
-      gl_Position = vec4(transformedHCoord.xy, 0.0, 1.0);
-    }
-  </script>
-  <script id="fragment-shader" type="x-shader/x-fragment">
-    #version 300 es
-    precision mediump float;
-    out vec3 f_color;
-    uniform vec3 color;
-    void main() {
-      f_color = color;
-    }
-  </script>
-  <!-- End GLSL 3.0 Shader code-->
-  <!-- JS include files-->
-  <!-- <script type="text/javascript" src="starUtils.js"></script> -->
-  <script type="text/javascript" src="home.component.js"></script>
-</head>
-<body>
-  <canvas id="gl-canvas"
-    >your browser doesn't support the HTML5 canvas element</canvas
-  >
-  <div class="overCanvas">
-    <!-- <h1>Welcome!</h1> -->
-    <div id="index">
-      <div class="column">
-        <h2>My Code:</h2>
-        <button [routerLink]="['/code']">Code</button><br />
-      </div>
-      <div class="column">
-        <h2>My Music:</h2>
-        <button
-          onclick="location.href='https://www.youtube.com/channel/UCsBV3-0sI4AP4dj1-HwTsJQ'"
-        >
-          Covers</button
-        ><br />
-        <button [routerLink]="['/music']">Music</button>
-      </div>
+<div id="homeContainer">
+  <div id="index">
+    <div class="column">
+      <h2>Programming:</h2>
+      <button [routerLink]="['/code']">Projects</button><br />
     </div>
-    <!--p(style={color : 'black'}) Text-->
+    <div class="column">
+      <h2>Music:</h2>
+      <button
+        onclick="location.href='https://www.youtube.com/channel/UCsBV3-0sI4AP4dj1-HwTsJQ'"
+      >
+        Covers</button
+      ><br />
+      <button [routerLink]="['/music']">Songs</button>
+    </div>
   </div>
-</body>
+  <!--p(style={color : 'black'}) Text-->
+</div>

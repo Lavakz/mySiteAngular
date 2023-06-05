@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 //@ts-ignore
 import WaveSurfer from 'wavesurfer.js';
 
-let musicDir: string = '../assets/Audio/myMusic/';
 function getSongNames(): string[] {
   // Todo: Get these from SQL database
   return [
@@ -24,16 +23,35 @@ function getSongNames(): string[] {
     'Towtacular',
   ];
 }
-let musicPaths: string[] = [];
 
-function getMusicPaths(refresh: boolean = false): string[] {
-  if (!refresh && musicPaths.length > 0) return musicPaths;
-  musicPaths = [];
-  let songNames = getSongNames()
-  songNames.forEach((songName) => {
-    musicPaths.push(musicDir.concat(songName).concat('.mp3'));
-  });
-  return musicPaths;
+class SongLoader {
+  private loadedSongs: Song[] = [];
+  private songDir: string = '../assets/Audio/myMusic/';
+  private songPaths: string[] = [];
+  
+  constructor(songDir: string) {
+    this.songDir = songDir;
+  }
+
+  getMusicPaths(refresh: boolean = false): string[] {
+    if (!refresh && this.songPaths.length > 0) return this.songPaths;
+    this.songPaths = [];
+    getSongNames().forEach((songName) => {
+      this.songPaths.push(this.songDir.concat(songName).concat('.mp3'));
+    });
+    return this.songPaths;
+  }
+  
+  load(
+    index: number = Math.floor(Math.random() * this.getMusicPaths().length)
+    ): void {
+      this.loadedSongs.forEach((wave) => wave.hide());
+      this.loadedSongs[0] = new Song(this.getMusicPaths()[index]);
+    }
+
+  isPlaying(): boolean {
+    return this.loadedSongs[0].isPlaying;
+  }
 }
 
 @Component({
@@ -46,7 +64,9 @@ function getMusicPaths(refresh: boolean = false): string[] {
       <button type="button" class="navigation" (click)="incrementSongIndex()">^</button>
       <div id="audioPlayer">
         <button id="playButton">Play</button>
-        <div id="waveform"></div>
+        <div id="waveform1"></div>
+        <div id="waveform2"></div>
+        <div id="waveform3"></div>
       </div>
       <button type="button" class="navigation" (click)="incrementSongIndex(true)">v</button>
     </div>
@@ -54,43 +74,43 @@ function getMusicPaths(refresh: boolean = false): string[] {
   styleUrls: ['./audio-player.component.sass'],
 })
 export class AudioPlayerComponent {
-  public static loadedSongs: Song[] = [];
+  public songLoader: SongLoader;
   songNames: string[] = []
-  songIndex: number = 0;
+  songIndex: number = Math.floor(Math.random() * getSongNames().length);
+
   constructor() {
     this.songNames = getSongNames();
-    window.addEventListener('resize', () => {
-      this.refreshSong()
-    });
+    this.songLoader = new SongLoader('../assets/Audio/myMusic/');
+    this.resizeHandler();
   }
+
   ngOnInit() {
-    loadSong();
+    this.songLoader.load(this.songIndex);
   }
+
   incrementSongIndex(down: boolean = false): void {
+    let b: HTMLElement | null = document.getElementById("playButton");
+    if (!b) return; 
+    b.innerHTML = 'Play'; 
     this.songIndex = this.songIndex + (down ? -1 : 1);
-    this.refreshSong()
+    if (this.songIndex < 0) this.songIndex = this.songNames.length - 1;
+    if (this.songIndex >= this.songNames.length) this.songIndex = 0;
+    this.songLoader.load(this.songIndex);
   }
-  refreshSong() {
-    this.songNames = getSongNames();
-    AudioPlayerComponent.loadedSongs.forEach((wave) => wave.destroy());
-    loadSong(this.songIndex);
+
+  resizeHandler(): void {
+    window.addEventListener('resize', () => {
+      this.songLoader.load(this.songIndex);
+    });
   }
 }
 
-function loadSong(
-  index: number = Math.floor(Math.random() * getMusicPaths().length)
-): Song {
-  AudioPlayerComponent.loadedSongs = [];
-  let song = new Song(getMusicPaths()[index]);
-  AudioPlayerComponent.loadedSongs.push(song);
-  return song;
-}
 
 class Song {
   private wavesurfer: WaveSurfer;
   public isPlaying: boolean = false;
 
-  constructor(songPath: string, containerSeletor: string = '#waveform') {
+  constructor(songPath: string, containerSeletor: string = '#waveform1') {
     this.createWaveSurfer(containerSeletor);
     this.wavesurfer.load(songPath);
     this.addPlayButton();
@@ -114,6 +134,10 @@ class Song {
       this.isPlaying = !this.isPlaying;
       playButton.innerHTML = this.isPlaying ? 'Pause' : 'Play';
     });
+  }
+
+  hide(): void {
+    this.destroy();
   }
 
   public destroy(): void {
