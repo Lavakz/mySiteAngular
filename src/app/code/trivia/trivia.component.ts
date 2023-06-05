@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+//@ts-ignore
+import { getCategories, start } from './trivia.js';
+
 @Component({
   selector: 'app-trivia',
   standalone: true,
@@ -9,5 +12,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./trivia.component.sass']
 })
 
-export class TriviaComponent {}
+export class TriviaComponent {
+  ngOnInit() {
+    getCategories();
+  }
+  startTrivia() {
+    start();
+  }
+}
 

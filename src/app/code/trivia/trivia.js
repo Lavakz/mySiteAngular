@@ -1,18 +1,7 @@
-let i = 0;
-let correctCount = 0;
-let firstGuess = true;
-
-function loadScript() {
-  let body = document.body;
-  let script = document.createElement('script');
-  script.innerHTML = '';
-  script.src = 'url';
-  script.async = true;
-  script.defer = true;
-  body.appendChild(script);
-}
-
-function start() {
+export function start() {
+  var i = 0;
+  var correctCount = 0;
+  var firstGuess = true;
   i = 0;
   correctCount = 0;
   quiz = getQuiz(document.getElementById("lengthSelect").value,
@@ -43,7 +32,7 @@ function next() {
   } else results()
 }
 
-function getCategories() {
+export function getCategories() {
   var Httpreq = new XMLHttpRequest();
   Httpreq.open("GET", 'https://opentdb.com/api_category.php', false);
   Httpreq.send(null);
