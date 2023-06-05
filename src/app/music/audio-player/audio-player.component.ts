@@ -26,7 +26,8 @@ function getSongNames(): string[] {
 
 class SongLoader {
   private loadedSongs: Song[] = [];
-  private songDir: string = '../assets/Audio/myMusic/';
+  // private songDir: string = './assets/Audio/';
+  private songDir: string;
   private songPaths: string[] = [];
   
   constructor(songDir: string) {
@@ -80,7 +81,7 @@ export class AudioPlayerComponent {
 
   constructor() {
     this.songNames = getSongNames();
-    this.songLoader = new SongLoader('../assets/Audio/myMusic/');
+    this.songLoader = new SongLoader('./assets/Audio/');
     this.resizeHandler();
   }
 
