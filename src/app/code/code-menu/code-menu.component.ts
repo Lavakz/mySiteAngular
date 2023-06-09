@@ -11,12 +11,9 @@ import { Output, EventEmitter } from '@angular/core';
     <div id="menu">
       <h1>Projects:</h1>
       <div id="links">
-        <a (click)="selectProject('Trivia')">Trivia</a><br />
-        <a (click)="selectProject('Word Game')">Word Game</a><br />
-        <a (click)="selectProject('Space Race Game')">Space Race Game</a><br />
-        <a onclick="location.href='/cube.html'">Rubik's Cube Simulation</a
-        ><br />
-        <a onclick="location.href='/pokemon.html'">Pokemon Binder</a>
+        <a (click)="selectProject('Trivia')">Trivia</a>
+        <a (click)="selectProject('Word Game')">Word Game</a>
+        <a (click)="selectProject('Pokemon Binder')">Pokemon Binder</a>
       </div>
     </div>
   `,

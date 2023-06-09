@@ -26,10 +26,10 @@ function getSongNames(): string[] {
 
 class SongLoader {
   private loadedSongs: Song[] = [];
-  // private songDir: string = './assets/Audio/';
   private songDir: string;
   private songPaths: string[] = [];
-  
+  private loadLabel: HTMLElement | null = null;
+
   constructor(songDir: string) {
     this.songDir = songDir;
   }
@@ -37,18 +37,23 @@ class SongLoader {
   getMusicPaths(refresh: boolean = false): string[] {
     if (!refresh && this.songPaths.length > 0) return this.songPaths;
     this.songPaths = [];
-    getSongNames().forEach((songName) => {
-      this.songPaths.push(this.songDir.concat(songName).concat('.mp3'));
-    });
+    getSongNames().forEach((songName) => 
+      this.songPaths.push(this.songDir.concat(songName).concat('.mp3'))
+    );
     return this.songPaths;
   }
-  
+
   load(
     index: number = Math.floor(Math.random() * this.getMusicPaths().length)
-    ): void {
-      this.loadedSongs.forEach((wave) => wave.hide());
-      this.loadedSongs[0] = new Song(this.getMusicPaths()[index]);
-    }
+  ): void {
+    if (this.loadLabel != null) 
+      this.loadLabel!.innerHTML = 'Loading...';
+    this.loadedSongs.forEach((wave) => wave.hide());
+    this.loadedSongs[0] = new Song(this.getMusicPaths()[index]);
+    if (this.loadLabel == null) 
+      this.loadLabel = document.getElementById('loadLabel');
+    this.loadedSongs[0].addReadyHandler(this.loadLabel);
+  }
 
   isPlaying(): boolean {
     return this.loadedSongs[0].isPlaying;
@@ -61,22 +66,33 @@ class SongLoader {
   imports: [CommonModule],
   template: `
     <div id="controlPanel">
-      <div id="songWindow"><h1 id="songTitle">{{ songNames[songIndex] }}</h1></div>
-      <button type="button" class="navigation" (click)="incrementSongIndex()">^</button>
+      <div id="songWindow">
+        <h1 id="songTitle">{{ songNames[songIndex] }}</h1>
+      </div>
+      <button type="button" class="navigation" (click)="incrementSongIndex()">
+        ^
+      </button>
       <div id="audioPlayer">
         <button id="playButton">Play</button>
+        <h2 id="loadLabel">Loading...</h2>
         <div id="waveform1"></div>
         <div id="waveform2"></div>
         <div id="waveform3"></div>
       </div>
-      <button type="button" class="navigation" (click)="incrementSongIndex(true)">v</button>
+      <button
+        type="button"
+        class="navigation"
+        (click)="incrementSongIndex(true)"
+      >
+        v
+      </button>
     </div>
   `,
   styleUrls: ['./audio-player.component.sass'],
 })
 export class AudioPlayerComponent {
   public songLoader: SongLoader;
-  songNames: string[] = []
+  songNames: string[] = [];
   songIndex: number = Math.floor(Math.random() * getSongNames().length);
 
   constructor() {
@@ -90,9 +106,9 @@ export class AudioPlayerComponent {
   }
 
   incrementSongIndex(down: boolean = false): void {
-    let b: HTMLElement | null = document.getElementById("playButton");
-    if (!b) return; 
-    b.innerHTML = 'Play'; 
+    let b: HTMLElement | null = document.getElementById('playButton');
+    if (!b) return;
+    b.innerHTML = 'Play';
     this.songIndex = this.songIndex + (down ? -1 : 1);
     if (this.songIndex < 0) this.songIndex = this.songNames.length - 1;
     if (this.songIndex >= this.songNames.length) this.songIndex = 0;
@@ -105,7 +121,6 @@ export class AudioPlayerComponent {
     });
   }
 }
-
 
 class Song {
   private wavesurfer: WaveSurfer;
@@ -137,7 +152,15 @@ class Song {
     });
   }
 
-  hide(): void {
+  public addReadyHandler(label: HTMLElement | null): void {
+    console.log('Adding ready handler');
+    this.wavesurfer.on('ready', () => {
+      console.log('Ready');
+      label!.innerHTML = '';
+    });
+  }
+
+  public hide(): void {
     this.destroy();
   }
 

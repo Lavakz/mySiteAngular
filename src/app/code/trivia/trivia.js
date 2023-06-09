@@ -1,7 +1,7 @@
+export var i = 0;
+export var correctCount = 0;
+export var firstGuess = true;
 export function start() {
-  var i = 0;
-  var correctCount = 0;
-  var firstGuess = true;
   i = 0;
   correctCount = 0;
   quiz = getQuiz(document.getElementById("lengthSelect").value,
@@ -11,7 +11,7 @@ export function start() {
   document.getElementById("quiz").style.display = "block"
 }
 
-function results() {
+export function results() {
   document.getElementById('score').innerHTML = 'Final score is ' + correctCount + ' out of ' + quiz.length;
   document.getElementById("quiz").style.display = "none";
   document.getElementById("setup").style.display = "block";
@@ -24,7 +24,7 @@ function results() {
   //fs.appendFile('triviaResults.json', json, function(err){});
 }
 
-function next() {
+export function next() {
   document.getElementById('next').style.background = 'white';
   if (i < quiz.length - 1) {
     i++;
@@ -47,7 +47,7 @@ export function getCategories() {
   })
 }
 
-function getQuiz(length, category) {
+export function getQuiz(length, category) {
   var Httpreq = new XMLHttpRequest();
   Httpreq.open("GET", 'https://opentdb.com/api.php?amount=' + length +
     '&category=' + category, false);
@@ -66,7 +66,7 @@ function getQuiz(length, category) {
   return quiz;
 }
 
-function loadQuestion() {
+export function loadQuestion() {
   document.getElementById('description').innerHTML = correctCount + '/' + quiz.length + ' ' + quiz[i].category;
   document.getElementById('question').innerHTML = 'Q' + (i + 1) + ': ' + quiz[i].question;
 
@@ -76,9 +76,8 @@ function loadQuestion() {
 
   // create answers array
   let answers = [];
-  let count = 0;
-  answerAmount = quiz[i].incorrect.length + 1;
-  correctPos = Math.floor(Math.random() * answerAmount)
+  let answerAmount = quiz[i].incorrect.length + 1;
+  let correctPos = Math.floor(Math.random() * answerAmount)
   for (let pos = 0; pos < answerAmount; pos++)
     if (pos == correctPos)
       answers[correctPos] = quiz[i].correct;
@@ -90,6 +89,10 @@ function loadQuestion() {
     el.class = "answer";
     el.id = 'a' + pos;
     el.textContent = answers[pos];
+    el.style.width = '40%';
+    el.style.height = '70%';
+    el.style.margin = '5%';
+    el.style.fontSize = '16px';
     if (pos == correctPos)
       el.onclick = function () {
         correct(pos);
@@ -103,7 +106,7 @@ function loadQuestion() {
   firstGuess = true;
 }
 
-function correct(pos) {
+export function correct(pos) {
   if (firstGuess) {
     document.getElementById('next').style.background = 'lightgreen'
     correctCount++;
@@ -112,7 +115,7 @@ function correct(pos) {
   firstGuess = false;
 }
 
-function incorrect(pos) {
+export function incorrect(pos) {
   if (firstGuess)
     document.getElementById('next').style.background = 'red'
   document.getElementById('a' + pos).style.background = 'red';

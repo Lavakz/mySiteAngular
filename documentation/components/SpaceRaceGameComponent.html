@@ -1,0 +1,813 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>my-site documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/vagrant.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">my-site documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SpaceRaceGameComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/code/space-race-game/space-race-game.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>AfterViewInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-space-race-game</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">Standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./space-race-game.component.sass</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./space-race-game.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Private</span>
+                                <a href="#canvas" >canvas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#webglService" >webglService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(webglService: <a href="../injectables/WebGLService.html" target="_self">WebGLService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/code/space-race-game/space-race-game.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>webglService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/WebGLService.html" target="_self" >WebGLService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/code/space-race-game/space-race-game.component.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/code/space-race-game/space-race-game.component.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="canvas"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Private</span>
+                        <span ><b>canvas</b></span>
+                        <a href="#canvas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any | undefined</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;glcanvas&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/code/space-race-game/space-race-game.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="webglService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>webglService</b></span>
+                        <a href="#webglService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/WebGLService.html" target="_self" >WebGLService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/code/space-race-game/space-race-game.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, ViewChild } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+
+// @ts-ignorek
+import { init, draw } from &#x27;./SpaceGame.js&#x27;;
+import { WebGLService } from &#x27;../../scene/services/web-gl.service&#x27;;
+
+const vertexShaderSource &#x3D; &#x60;#version 300 es
+in vec4 a_coords;
+in vec3 a_normals;
+in vec4 a_color;
+in vec2 a_texCoord;
+uniform mat4 u_modelViewMatrix;
+uniform mat4 u_projectionMatrix;
+uniform vec4 ambientProduct, diffuseProduct, specularProduct;
+uniform vec4 lightPosition;
+uniform vec4 thrusterPosition;
+uniform float shininess;
+out vec4 v_color;
+out vec2 v_texCoord;
+void main() {
+v_color &#x3D; a_color;
+v_texCoord &#x3D; a_texCoord;
+vec3 pos &#x3D; -(u_modelViewMatrix * a_coords).xyz;
+vec3 light &#x3D; (u_modelViewMatrix * lightPosition).xyz;
+vec3 thruster &#x3D; (u_modelViewMatrix * thrusterPosition).xyz;
+vec3 L &#x3D; normalize( light - pos );
+vec3 E &#x3D; normalize( -pos );
+vec3 H &#x3D; normalize( L + E );
+vec4 NN &#x3D; vec4(a_normals,0);
+vec3 N &#x3D; normalize( (u_modelViewMatrix*NN).xyz);
+vec4 ambient &#x3D; ambientProduct;
+float Kd &#x3D; max( dot(L, N), 0.0 );
+vec4  diffuse &#x3D; Kd * diffuseProduct;
+float Ks &#x3D; pow( max(dot(N, H), 0.0), shininess );
+vec4  specular &#x3D; Ks * specularProduct;
+if( dot(L, N) &lt; 0.8 ) {
+specular &#x3D; vec4(0.0, 0.0, 0.0, 1.0);
+}
+vec3 Lt &#x3D; normalize( thruster - pos );
+vec4  thrusterDiffuse &#x3D; max( dot(Lt, N), 0.0 ) * vec4(0.0, 0.0, 1.0, 1.0);
+gl_Position &#x3D; u_projectionMatrix * u_modelViewMatrix * a_coords;
+v_color &#x3D; ambient + diffuse + specular + thrusterDiffuse;
+v_color.a &#x3D; 1.0;
+}&#x60;;
+
+const fragmentShaderSource &#x3D; &#x60;#version 300 es
+precision mediump float;
+in vec2 v_texCoord;
+in vec4 v_color;
+out vec4 f_color;
+uniform sampler2D u_textureMap;
+uniform float textured;
+void main() {
+if (textured &gt;&#x3D; 0.0)
+f_color &#x3D; v_color * texture(u_textureMap, v_texCoord);
+else
+f_color &#x3D; v_color;
+}&#x60;;
+
+function createShader(gl: any, sourceCode: any, type: any) {
+  // Compiles either a shader of type gl.VERTEX_SHADER or gl.FRAGMENT_SHADER
+  const shader &#x3D; gl.createShader(type);
+  gl.shaderSource(shader, sourceCode);
+  gl.compileShader(shader);
+
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    const info &#x3D; gl.getShaderInfoLog(shader);
+    throw &#x60;Could not compile WebGL program. \n\n${info}&#x60;;
+  }
+  return shader;
+}
+
+@Component({
+  selector: &#x27;app-space-race-game&#x27;,
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: &#x27;./space-race-game.component.html&#x27;,
+  styleUrls: [&#x27;./space-race-game.component.sass&#x27;],
+})
+export class SpaceRaceGameComponent implements AfterViewInit {
+  @ViewChild(&#x27;glcanvas&#x27;) private canvas: any | undefined;
+  constructor(public webglService: WebGLService) {}
+  ngAfterViewInit(): void {
+    if (!this.canvas) {
+      alert(&#x27;canvas not supplied! cannot bind WebGL context!&#x27;);
+      return;
+    }
+    this.webglService.initialiseWebGLContext(this.canvas.nativeElement);
+    const program: any &#x3D; this.webglService.gl.createProgram();
+    this.webglService.gl.attachShader(
+      program,
+      createShader(
+        this.webglService.gl,
+        vertexShaderSource,
+        this.webglService.gl.VERTEX_SHADER
+      )
+    );
+    this.webglService.gl.attachShader(
+      program,
+      createShader(
+        this.webglService.gl,
+        fragmentShaderSource,
+        this.webglService.gl.FRAGMENT_SHADER
+      )
+    );
+    this.webglService.gl.linkProgram(program);
+    this.webglService.gl.useProgram(program);
+    init(this.webglService.gl, program);
+  }
+  ngOnInit() {}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset&#x3D;&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Space Race&lt;/title&gt;
+    &lt;script type&#x3D;&quot;text/javascript&quot; src&#x3D;&quot;Spaceship.js&quot;&gt;&lt;/script&gt;
+    &lt;script type&#x3D;&quot;text/javascript&quot; src&#x3D;&quot;ring.js&quot;&gt;&lt;/script&gt;
+    &lt;script type&#x3D;&quot;text/javascript&quot; src&#x3D;&quot;finish-line.js&quot;&gt;&lt;/script&gt;
+    &lt;script type&#x3D;&quot;text/javascript&quot; src&#x3D;&quot;utils.js&quot;&gt;&lt;/script&gt;
+    &lt;script type&#x3D;&quot;text/javascript&quot; src&#x3D;&quot;SpaceGame.js&quot;&gt;&lt;/script&gt;
+    &lt;script type&#x3D;&quot;text/javascript&quot; src&#x3D;&quot;shapes.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;style.css&quot;&gt; --&gt;
+    &lt;link rel&#x3D;&quot;preconnect&quot; href&#x3D;&quot;https://fonts.googleapis.com&quot; /&gt;
+    &lt;link rel&#x3D;&quot;preconnect&quot; href&#x3D;&quot;https://fonts.gstatic.com&quot; crossorigin&#x3D;&quot;&quot; /&gt;
+    &lt;link
+      href&#x3D;&quot;https://fonts.googleapis.com/css2?family&#x3D;Balsamiq+Sans&amp;amp;display&#x3D;swap&quot;
+      rel&#x3D;&quot;stylesheet&quot;
+    /&gt;
+    &lt;link
+      href&#x3D;&quot;https://fonts.googleapis.com/css2?family&#x3D;PT+Mono&amp;amp;display&#x3D;swap&quot;
+      rel&#x3D;&quot;stylesheet&quot;
+    /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id&#x3D;&quot;container&quot;&gt;
+      &lt;h1&gt;Space Race&lt;/h1&gt;
+      &lt;div id&#x3D;&quot;second-container&quot;&gt;
+        &lt;div id&#x3D;&quot;instructions&quot;&gt;
+          &lt;p&gt;W: tilt up&lt;/p&gt;
+          &lt;p&gt;A: roll left&lt;/p&gt;
+          &lt;p&gt;S: tilt down&lt;/p&gt;
+          &lt;p&gt;D: roll right&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div id&#x3D;&quot;canvas-timer&quot;&gt;
+          &lt;p id&#x3D;&quot;timer&quot; hidden&#x3D;&quot;&quot;&gt;00:00&lt;/p&gt;
+          &lt;canvas id&#x3D;&quot;gl-canvas&quot; width&#x3D;&quot;650&quot; height&#x3D;&quot;650&quot; #glcanvas&gt;&lt;/canvas&gt;
+          &lt;div id&#x3D;&quot;layered-content&quot;&gt;
+            &lt;p id&#x3D;&quot;who-won&quot; hidden&#x3D;&quot;&quot;&gt;&lt;/p&gt;
+            &lt;p id&#x3D;&quot;finish&quot; hidden&#x3D;&quot;&quot;&gt;Finished&lt;/p&gt;
+            &lt;p id&#x3D;&quot;user-time&quot; hidden&#x3D;&quot;&quot;&gt;&lt;/p&gt;
+            &lt;div id&#x3D;&quot;rules-container&quot;&gt;
+              &lt;p id&#x3D;&quot;rules&quot;&gt;
+                A rival pilot challenges you—an ambitious new pilot—to a
+                spaceship race around a nearby planet.&lt;br /&gt;&lt;br /&gt;
+                Go through all the rings and cross the finish line before the
+                rival ship!&lt;br /&gt;&lt;br /&gt;
+                (press space to start)
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- &lt;img id&#x3D;&quot;volcanoPlanetTex&quot; hidden&#x3D;&quot;&quot; /&gt;&lt;img
+        id&#x3D;&quot;gasPlanetTex&quot;
+        src&#x3D;&quot;./SpaceRaceGameImages/Terrestrial2-1024.png&quot;
+        hidden&#x3D;&quot;&quot;
+      /&gt;&lt;img id&#x3D;&quot;earthPlanetTex&quot; src&#x3D;&quot;./SpaceRaceGameImages/Gaseous2-1024.png&quot; hidden&#x3D;&quot;&quot; /&gt;&lt;img
+        id&#x3D;&quot;shipTexture&quot;
+        src&#x3D;&quot;./SpaceRaceGameImages/metalWires512.jpg&quot;
+        hidden&#x3D;&quot;&quot;
+      /&gt;&lt;img id&#x3D;&quot;finishLineTex&quot; src&#x3D;&quot;./SpaceRaceGameImages/finish-line.svg&quot; hidden&#x3D;&quot;&quot; /&gt; --&gt;
+      &lt;img id&#x3D;&quot;volcanoPlanetTex&quot; hidden&#x3D;&quot;&quot; /&gt;&lt;img
+        id&#x3D;&quot;gasPlanetTex&quot;
+        hidden&#x3D;&quot;&quot;
+      /&gt;&lt;img id&#x3D;&quot;earthPlanetTex&quot; hidden&#x3D;&quot;&quot; /&gt;&lt;img
+        id&#x3D;&quot;shipTexture&quot; hidden&#x3D;&quot;&quot;
+      /&gt;&lt;img id&#x3D;&quot;finishLineTex&quot; hidden&#x3D;&quot;&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./space-race-game.component.sass</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">// @font-face 
+// font-family: &#x27;digital clock font&#x27; 
+//     src: url(&#x27;fonts/alarmclock.ttf&#x27;) format(&quot;truetype&quot;) 
+body 
+    background-color: black 
+    background-image: url(&quot;../../../assets/SpaceRaceGameImages/Stars.jpg&quot;) 
+    background-repeat: none 
+    display: flex 
+    align-items: center 
+    font-family: &#x27;Space Mono&#x27;, monospace 
+h1 
+    margin: 5px 0 
+    padding: 5px 
+    text-align: center 
+    font-size: 50px 
+    background-color: black 
+    color: white 
+#instructions 
+    display: flex 
+    flex-direction: column 
+    justify-content: space-around 
+    background-color: black 
+    color: white 
+    width: 150px 
+    height: 350px 
+    margin: 0 auto 
+    padding: 10px 5px 
+    p 
+        font-size: 17px 
+        text-align: center 
+        font-weight: bold 
+#container 
+    display: flex 
+    flex-direction: column 
+    align-items: center 
+    width: 70% 
+    margin: 0 auto 
+#second-container 
+    display: flex 
+    align-items: center 
+    width: 100% 
+    div 
+        margin: 0 30px 
+#canvas-timer 
+    flex: 1 
+    display: flex 
+    position: relative 
+#gl-canvas 
+    z-index: 0 
+#timer 
+    z-index: 1 
+    margin: 0 
+    position: absolute 
+    color: red 
+    padding: 10px 10px 
+    font-size: 32px 
+    font-family: &#x27;digital clock font&#x27;, cursive 
+#layered-content, #rules-container 
+    color: white 
+    display: flex 
+    flex-direction: column 
+    z-index: 1 
+    margin: 0 
+    position: absolute 
+    height: 650px 
+    width: 650px 
+    align-items: center 
+    top: 0 
+    left: -30px 
+#layered-content 
+    justify-content: center 
+    p 
+        margin: 0 
+#who-won 
+    text-transform: uppercase 
+    text-align: center 
+    font-size: 30px 
+#finish 
+    font-size: 100px 
+    text-transform: uppercase 
+    text-align: center 
+#rules-container 
+    justify-content: center 
+    #rules 
+        background-color: black 
+        padding: 20px 
+        width: 530px 
+        font-size: 25px 
+        font-weight: bold 
+        line-height: 1.3em 
+        text-align: center 
+        font-family: monospace 
+#user-time 
+    font-size: 25px 
+    font-weight: bold 
+    text-align: center 
+    font-family: monospace 
+
+#volcanoPlanetTex
+    src: &quot;../../../assets/SpaceRaceGameImages/Volcanic1024.png&quot;
+
+#gasPlanetTex
+    src: &quot;../../../assets/SpaceRaceGameImages/Terrestrial2-1024.png&quot;
+
+#earthPlanetTex
+
+#shipTexture
+
+#finishLineTex
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!DOCTYPE html><html>  <head>    <meta charset="UTF-8" />    <title>Space Race</title>    <script type="text/javascript" src="Spaceship.js"></script>    <script type="text/javascript" src="ring.js"></script>    <script type="text/javascript" src="finish-line.js"></script>    <script type="text/javascript" src="utils.js"></script>    <script type="text/javascript" src="SpaceGame.js"></script>    <script type="text/javascript" src="shapes.js"></script>    <!-- <link rel="stylesheet" href="style.css"> -->    <link rel="preconnect" href="https://fonts.googleapis.com" />    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />    <link      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&amp;display=swap"      rel="stylesheet"    />    <link      href="https://fonts.googleapis.com/css2?family=PT+Mono&amp;display=swap"      rel="stylesheet"    />  </head>  <body>    <div id="container">      <h1>Space Race</h1>      <div id="second-container">        <div id="instructions">          <p>W: tilt up</p>          <p>A: roll left</p>          <p>S: tilt down</p>          <p>D: roll right</p>        </div>        <div id="canvas-timer">          <p id="timer" hidden="">00:00</p>          <canvas id="gl-canvas" width="650" height="650" #glcanvas></canvas>          <div id="layered-content">            <p id="who-won" hidden=""></p>            <p id="finish" hidden="">Finished</p>            <p id="user-time" hidden=""></p>            <div id="rules-container">              <p id="rules">                A rival pilot challenges you—an ambitious new pilot—to a                spaceship race around a nearby planet.<br /><br />                Go through all the rings and cross the finish line before the                rival ship!<br /><br />                (press space to start)              </p>            </div>          </div>        </div>      </div>      <!-- <img id="volcanoPlanetTex" hidden="" /><img        id="gasPlanetTex"        src="./SpaceRaceGameImages/Terrestrial2-1024.png"        hidden=""      /><img id="earthPlanetTex" src="./SpaceRaceGameImages/Gaseous2-1024.png" hidden="" /><img        id="shipTexture"        src="./SpaceRaceGameImages/metalWires512.jpg"        hidden=""      /><img id="finishLineTex" src="./SpaceRaceGameImages/finish-line.svg" hidden="" /> -->      <img id="volcanoPlanetTex" hidden="" /><img        id="gasPlanetTex"        hidden=""      /><img id="earthPlanetTex" hidden="" /><img        id="shipTexture" hidden=""      /><img id="finishLineTex" hidden="" />    </div>  </body></html></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AudioPlayerComponent', 'selector': 'app-audio-player'},{'name': 'BinderComponent', 'selector': 'app-binder'},{'name': 'CodeComponent', 'selector': 'app-code'},{'name': 'CodeMenuComponent', 'selector': 'app-code-menu'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MusicComponent', 'selector': 'app-music'},{'name': 'SpaceRaceGameComponent', 'selector': 'app-space-race-game'},{'name': 'TriviaComponent', 'selector': 'app-trivia'},{'name': 'WordGameComponent', 'selector': 'app-word-game'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SpaceRaceGameComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SpaceRaceGameComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

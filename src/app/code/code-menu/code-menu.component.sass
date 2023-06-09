@@ -1,9 +1,10 @@
 @use '../../../styles'
     
 #menu
-    // position: absolute
     margin: 0 0 0 0
     padding: 28px
+    z-index: -100
+
     @include styles.window($color: styles.$blue)
 
 #links
@@ -11,7 +12,7 @@
     flex-direction: column
     
 #links a 
-    font-size: 14px
+    font-size: 24px
     padding: 7px
     margin: 7px
     font-weight: bold
@@ -20,9 +21,5 @@
 
 h1 
     color: #ffffff
-    margin: 0px 0px 28px 0px
-
-
-
-
-
+    margin: 16px
+    font-size: 48px
